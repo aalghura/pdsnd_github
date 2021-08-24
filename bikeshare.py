@@ -2,6 +2,7 @@ import time
 import pandas as pd
 import numpy as np
 
+#Udacity Project
 CITY_DATA = { 'Chicago': 'chicago.csv','New York': 'new_york_city.csv','Washington': 'washington.csv' }
 CITIES = ['Chicago','New York', 'Washington']
 MONTHS = ['All', 'January', 'February', 'March', 'April', 'May', 'June']
