@@ -7,7 +7,6 @@ CITIES = ['Chicago','New York', 'Washington']
 MONTHS = ['All', 'January', 'February', 'March', 'April', 'May', 'June']
 DAYS = ['All', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
-
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -24,7 +23,7 @@ def get_filters():
         if city in CITIES:
             print('-'*40)
             break
-        else: 
+        else:
             print('-----Please enter a valid city-----')
 
     # Getting user input for month (all, january, february, ... , june)
@@ -33,7 +32,7 @@ def get_filters():
         if month in MONTHS:
             print('-'*40)
             break
-        else: 
+        else:
             print('-----Please enter a valid month-----')
 
     # Getting user input for day of week (all, monday, tuesday, ... sunday)
@@ -42,7 +41,7 @@ def get_filters():
         if day in DAYS:
             print('-'*40)
             break
-        else: 
+        else:
             print('-----Please enter a valid day-----')
 
     return city, month, day
@@ -61,21 +60,20 @@ def load_data(city, month, day):
     # city is used to load the data file into Pandas DataFrame
     cityfile = CITY_DATA[city]
     df = pd.read_csv(cityfile)
-    
+
     # Convert to datetime column
     df['Start Time'] = pd.to_datetime(df['Start Time'])
-    
+
     # Create new columns from extracted month, weekday, and hour from Start Time CVS column
     df['Month'] = df['Start Time'].dt.month
     df['Week_Day'] = df['Start Time'].dt.weekday_name
     df['Hour'] = df['Start Time'].dt.hour
-    
+
     # Filter according to month if requested
     if month != 'All':
         month = MONTHS.index(month)
         df = df[df['Month'] == month]
-        
-        
+
     # Filter according to day if requested
     if day != 'All':
         df = df[df['Week_Day'] == day]
@@ -88,7 +86,7 @@ def time_stats(df):
     print('Calculating The Most Frequent Times of Travel...')
     start_time = time.time()
     print('*'*80)
-    
+
     # Display the most common month
     Most_Common_Month = df['Month'].mode()[0]
     print('The most common month in the filtered data set was found to be:\n', MONTHS[Most_Common_Month])
@@ -187,7 +185,7 @@ def user_stats(df):
     print('\n'+'-'*80)
     print("*********This took %s seconds*********" % (time.time() - start_time))
     print('-'*80)
-    
+
 def raw_data(df):
     # This function preview raw data starting from first 5 rows and then loops until user opt out
     counter = 0
@@ -212,7 +210,7 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
         raw_data(df)
-        
+
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
