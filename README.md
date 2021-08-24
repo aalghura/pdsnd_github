@@ -10,10 +10,10 @@ Bikeshare Python Udacity Data Science Project
 View 2016 bikehsare statistics based on user selection of city, day, and month of Chicago, New York, and Washington.
 
 ### Files used
-bikeshare.py
-chicago.csv
-new_york_city.csv
-washington.csv
+1- bikeshare.py
+2- chicago.csv
+3- new_york_city.csv
+4- washington.csv
 
 ### Credits
 Udacity
