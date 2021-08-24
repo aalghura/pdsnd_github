@@ -4,7 +4,7 @@
 Tuesday 08/24/2021.
 
 ### Project Title
-Bikeshare Python Udacity Data Science Project
+Bikeshare Python Udacity Project for Data Science
 
 ### Description
 View 2016 bikehsare statistics based on user selection of city, day, and month of Chicago, New York, and Washington.
