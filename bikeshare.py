@@ -2,7 +2,7 @@ import time
 import pandas as pd
 import numpy as np
 
-#Udacity Project
+#Udacity Project bikeshare data science
 CITY_DATA = { 'Chicago': 'chicago.csv','New York': 'new_york_city.csv','Washington': 'washington.csv' }
 CITIES = ['Chicago','New York', 'Washington']
 MONTHS = ['All', 'January', 'February', 'March', 'April', 'May', 'June']
@@ -149,6 +149,7 @@ def trip_duration_stats(df):
     print("*********This took %s seconds*********" % (time.time() - start_time))
     print('-'*80)
 
+
 def user_stats(df):
     """Displays statistics on bikeshare users."""
     print('\n'+'*'*80)
@@ -216,7 +217,6 @@ def main():
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
-
 
 if __name__ == "__main__":
 	main()
